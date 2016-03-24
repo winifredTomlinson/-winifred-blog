@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	code{ color:#1abc9c; }
+    html{ background:#eee; }
+	body{ width:96%; max-width: 1160px; background:#fff; margin:-2em auto 0;border:1px solid #ddd;border-width:0 1px;}
+.top{background-color:#C7DAD9;width:98%;height:100px;margin:0 5px;}
+.topFont{color:#fff;font-size:38px;font-weight:900;font-family:Tahoma, Geneva, sans-serif;padding-top:49px;margin-left:15px;}.navTop{position:relative;display:block;height:30px;margin-left:500px;}.navTop ul{list-style-type:none;}.navTop ul li{position:relative;display:inline;margin-left:50px;color:#007CF9;}.navTop ul li a::after{content:'';opacity:0;top:100%;width:100%;left:0;height:4px;background:#007CF9;position:absolute;-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);}.navTop ul li a:hover::after,.f a:focus::after{opacity:1;transform:translateY(5px);-moz-transform:translateY(5px);-webkit-transform:translateY(5px);}.navLeft ul{list-style-type:none;float:left;padding-left:7px;margin-top:20px;}.navLeft ul li {margin-top:0px;}.navLeft p{height:1200px;width:2px;background:#9E9E9E;float:left;margin-left:10px;}.navLeft ul li a{font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:17px;margin-top:-10px;}.navLeft ul li a:hover,.navLeft ul li a:focus{color:#007CF9;}.main{height:1200px;}.left{height:100%;float:left;}.right{position:relative;display:block;margin-left:210px;padding-right:20px;}.css-transition-animation{height:30px;width:900px;;background:#007CF9;float:left;clear:right;font:500 14px/1.8 Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;padding-left:15px;font-weight:900px;color:#fff;}h1,h2,h3,h4,h5,h6{position:relative;display:block;margin:0;padding:0;}
+pre{
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre-wrap;
+	word-wrap: break-word;border: 1px solid #ddd;
+	border-left-width: 0.4em;
+	background: #fbfbfb;
+	padding: 10px;
+}blockquote {
+	margin: 1em 4em 1em 2em;
+	padding: 0.6em 1em;/*因为没有设置高度，所以可以通过padding撑大背景*/
+	background:#F10A49;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+#note { 
+	background: #FFF; 
+	width:200px;
+    overflow:hidden; 
+    border: 1px dashed #CCC; 
+    height: 40px; 
+    float: left;
+} 
+#note a { 
+    font-family: "微软雅黑"; 
+    display: block; 
+	font-size:10px;
+	text-decoration:none; 
+	color:#000;
+} 
+
+nav a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+} 
+.wxy a::before,
+.wxy a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.wxy a::before {
+	margin-right: 10px;
+	content: '[';
+	font-family:"Courier New", Courier, monospace;font-weight:bolder;font-size:25px;
+	color:#fff;
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.wxy a::after {
+	margin-left: 10px;/*与下面:hover里的translateX(0px)配套使用，定义完全不透明时的位置*/
+	content: ']';
+	font-family:"Courier New", Courier, monospace;font-weight:bolder;font-size:25px;
+	color:#fff;
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.wxy a:hover::before,
+.wxy a:hover::after,
+.wxy a:focus::before,
+.wxy a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+.bottom a::after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background:#000;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.bottom a:hover::after,
+.bottom a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.sameWord a {
+	overflow: hidden;
+	padding: 0 4px;
+	height: 1em;
+}
+
+.sameWord a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.sameWord a span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-tatol);
+	font-weight: 700;
+	/*-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);            感觉好像没什么用*/
+}
+
+.sameWord a:hover span,
+.sameWord a:focus span {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+</style>
+</head>
+
+<body><div class="top"><p class="topFont">WinifredTomlinson's Blog</p></div>
+<div class="navTop"><ul>
+    <li style="margin-left:2px;"><a>首 页</a></li><li><a>学习笔记</a></li><li><a>前端之路</a></li></ul>
+</div>
+<div class="main">
+<div class="left">
+<nav class="navLeft"><ul>
+<li><a>HTML</a></li><li><a>CSS</a></li><li><a>JAVASCRIPT</a></li><li><a>JQUERY</a></li>
+</ul>
+<p></p>
+</nav>
+</div>
+<div class="right">
+<p class="css-transition-animation">正则表达式</p>
+<br/>
+<br/>
+<h2>字符类</h2>
+<p>字符类，即将直接量字符单独放进方括号内，而因为有些字符类非常常用，所以用了一些特殊字符的转义字符来表示他们</p>
+<pre>
+如：
+\w:匹配所有ASCLL码的字符，包括数字和字母
+\W：匹配所有不是ASCLL码的字符
+\s：匹配空格符
+\S：匹配不是空格符
+\d：匹配数字
+\D：匹配不是数字
+</pre>
+<h2>重复</h2>
+<p>重复，为了实现重复字符的匹配而引入的特殊字符，如+，？</p>
+<h2>修饰符</h2>
+<p>定义的修饰符只有三个</p>
+<pre>
+i:忽略大小写进行匹配
+m:实现多行匹配
+g:在全局范围内进行匹配
+</pre>
+<h2>String的模式匹配</h2>
+<p>支持4种使用正则表达式的方法search(),replace(),match()和split()</p>
+<pre>
+search():
+参数是一个正则表达式，返回第一个与之匹配的子串的起始位置。不支持全局检索，忽略修饰符g。
+</pre>
+css2D转换(transform)
+变换的效果，让某个元素改变其形状、大小和位置。
+1、rotate()使元素顺时针旋转，负值是允许的，这样元素是逆时针旋转的。
+Exp:
+<style>
+div{transform:rotate(30deg)}/*其中的30deg表示顺时针旋转30度*/
+</style>
+<h>transition与transform的合用</h>
+<p>如上述transition示例代码所示，transform作为css属性，也可以在transition属性中被选中调用</p>
+<b>transform不定义时间,transition才定义时间</b>
+</p>
+JavaScript
+<p>函数的四种调用方式：
+1、普通函数调用
+2、作为对象的方法调用
+3、作为构造函数调用
+4、使用apply和call函数调用
+<h>PS:当使用第四种方式时，要注意其共性与区别，共性为都有两个参数，第一个参数为希望绑定的this对象，主要区别为apply参数要作为数组传人，加引号并用逗号隔开["",""]，而call的参数是与所调用函数的参数一一对应的。而bind和apply，call一样，都可以绑定对象，但是bind返回的仍然是一个函数，需要用()再进行调用，而后者直接是对函数的调用，故不需要()。
+所谓闭包是在外部函数内部定义内部函数，内部函数调用外部函数的参数，并且在外部函数外将调用内部函数。在理解闭包时要注意理解，执行环境，作用域链以及变量常驻内存，不会被垃圾回收机制回收等情况。</h></p>
+<p><h>函数的三种定义方式</h>
+1、通常的函数定义即通过function语句实现（也叫声明式函数）
+function funcname([arg1[,arg2......]]){statements}
+<h>PS:函数定义描述的是一个静态的程序结构，当 JavaScript 解析器遇到一个函数定义时，它就被解析并存储构成函数体的语句，然后定义一个和该函数名同名的全局或者某个对象属性来保存。当该函数被调用时，里面的函数体才真正的被执行。如：</h>
+<p>alert(typeof f);<!--显示function,而不是undefined-->function f(x,y){alert(x+y);}  f(2,3);<!--显示5--></p>
+2、Function()构造函数（匿名函数）
+var myfunc=new Function('x','y','alert(x+y)');
+3、函数直接量
+函数直接量是一个表达式，它即可以定义一个匿名函数，也可以定义一个带函数名的函数:
+var sum = function(a, b){
+  return a+b;
+}
+var f = function fact(x){
+  if(x<= 1){
+    return 1;
+  }else{
+return x * fact(x-1);
+  }
+}
+<b>三种定义方式的区别</b>
+可以从作用域、效率以及加载顺序来区分。
+1、从作用域上来说，函数声明式和函数直接量使用的是局部变量，而 Function()构造函数却是全局变量
+2、执行效率上来说，Function()构造函数的效率要低于其他两种方式，尤其是在循环体中，因为构造函数每执行一次都要重新编译，并且生成新的函数对象，为了加快网页加载速度，提高用户体验，不建议选择 Function ()构造函数方式来定义函数。
+3、加载顺序，function 方式(即函数声明式)是在 JavaScript 编译的时候就加载到作用域中,而其他两种方式则是在代码执行的时候加载，如果在定义之前调用它，则会返回 undefined：
+</p>
+<br/>
+<br/>
+
+<nav class="sameWord"><a><span data-tatol="love">love</span></a></nav>
+<p>HTML:table标签中的tr(行),th,td,thead,tbody.<abbr title="" role=""></abbr></p>
+<p>标签<blockquote></blockquote>定义块引用，一般里面包含文字，用于文字排版，<blockquote> 与 </blockquote> 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。<mark>简单来说就是，浏览器一般会为此标签里的文字进行首行缩进。</mark></p>
+<nav class="bottom"><a>bottom</a></nav>
+<nav class="wxy"><a>WXY</a></nav>
+</div>
+</div>
+</body>
+</html>

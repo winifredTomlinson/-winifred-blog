@@ -1,0 +1,155 @@
+
+	code{ color:#1abc9c; }
+    html{ background:#eee; }
+	<!--#box {position:absolute;width: 250px; height: 250px; margin: 0 auto; background: red;margin-top:300px; } 
+	-->
+	body{ width:96%; max-width: 1160px; background:#fff; margin:-2em auto 0;border:1px solid #ddd;border-width:0 1px;}
+.top{background-color:#C7DAD9;height:250px;margin:0 3px;}
+.topFont{color:#000;font-size:58px;font-weight:900;font-family:Tahoma, Geneva, sans-serif;margin-top:52px;;margin-left:600px;float:left;}.navTop{position:relative;display:block;height:30px;margin-left:500px;}.navTop ul{list-style-type:none;}.navTop ul li{position:relative;display:inline;margin-left:50px;color:#007CF9;}.navTop ul li a::after{content:'';opacity:0;top:100%;width:100%;left:0;height:4px;background:#007CF9;position:absolute;-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);}.navTop ul li a:hover::after,.f a:focus::after{opacity:1;transform:translateY(5px);-moz-transform:translateY(5px);-webkit-transform:translateY(5px);}.navLeft ul{list-style-type:none;float:left;padding-left:7px;margin-top:20px;}.navLeft ul li {margin-top:0px;}.navLeft p{height:1200px;width:2px;background:#9E9E9E;float:left;margin-left:10px;}.navLeft ul li a{font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:17px;margin-top:-10px;}ul li a span.navLeftspan{display:inlinefont-family:'Trebuchet MS', Arial, Helvetica, sans-serif;font-weight:bold;color:#000;}.navLeft ul li a:hover,.navLeft ul li a:focus{color:#007CF9;}.navLeft ul li ul{display:none;position:absolute;color:#575757;font-family:"微软雅黑";font-weight:bold;font-size:14px;margin-left:20px;}.navLeft ul li ul li{margin-top:10px;}.main{height:3000px;}.left{height:100%;float:left;}.right{position:relative;display:block;margin-left:210px;padding-right:20px;}.css-transition-animation{height:30px;width:900px;;background:#007CF9;float:left;clear:right;font:500 14px/1.8 Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;padding-left:15px;font-weight:900px;color:#fff;}h1,h2,h3,h4,h5,h6{position:relative;display:block;margin:0;padding:0;}
+pre{
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre-wrap;
+	word-wrap: break-word;border: 1px solid #ddd;
+	border-left-width: 0.4em;
+	background: #fbfbfb;
+	padding: 10px;
+}blockquote {
+	margin: 1em 4em 1em 2em;
+	padding: 0.6em 1em;/*因为没有设置高度，所以可以通过padding撑大背景*/
+	background:#F10A49;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+#note { 
+	background: #FFF; 
+	width:200px;
+    overflow:hidden; 
+    border: 1px dashed #CCC; 
+    height: 40px; 
+    float: left;
+} 
+#note a { 
+    font-family: "微软雅黑"; 
+    display: block; 
+	font-size:10px;
+	text-decoration:none; 
+	color:#000;
+} 
+
+nav a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+} 
+.wxy a::before,
+.wxy a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.wxy a::before {
+	margin-right: 10px;
+	content: '[';
+	font-family:"Courier New", Courier, monospace;font-weight:bolder;font-size:25px;
+	color:#fff;
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.wxy a::after {
+	margin-left: 10px;/*与下面:hover里的translateX(0px)配套使用，定义完全不透明时的位置*/
+	content: ']';
+	font-family:"Courier New", Courier, monospace;font-weight:bolder;font-size:25px;
+	color:#fff;
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.wxy a:hover::before,
+.wxy a:hover::after,
+.wxy a:focus::before,
+.wxy a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+.bottom a::after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background:#000;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.bottom a:hover::after,
+.bottom a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.sameWord a {
+	overflow: hidden;
+	padding: 0 4px;
+	height: 1em;
+}
+
+.sameWord a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.sameWord a span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-tatol);
+	font-weight: 700;
+	/*-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);            感觉好像没什么用*/
+}
+
+.sameWord a:hover span,
+.sameWord a:focus span {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}

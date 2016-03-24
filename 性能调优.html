@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../文章.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+<nav class="click-nav" id="click-nav">
+<nav class="ion-close" id="ion-close"></nav>
+<ul>
+<li><a href="#">HTML</a></li>
+<div class="line-black"></div>
+<li><a href="#">CSS</a></li>
+<div class="line-black"></div>
+<li><a href="#">JAVASCRIPT</a></li>
+<div class="line-black"></div>
+<li><a href="#">JQUERY</a></li>
+<div class="line-black"></div>
+</ul>
+</nav>	
+<div class="top">
+
+<div class="ball" id="ball">
+
+</div>
+				Winifred's Blog
+</div>
+<div class="ion-navigate" id="ion-navigate"></div>
+<div class="section">
+<div class="main">
+<div class="navTop"><ul>
+    <li style="margin-left:2px;"><a href="index.html" target="self">首 页</a></li><li><a href="学习小记.html" target="self">学习笔记</a></li><li><a href="前端之路——无止境的学习之路.html" target="_self">前端之路</a></li></ul>
+</div>
+<div style="background-color:#ccc;height:1px;width:90%;left:5%;float:left;position:relative;"></div>
+<div class="articleHead">
+<pre>提高Web应用性能之Javascript性能调优<pre>
+<pre class="subhead">分类：Javascript&nbsp;&nbsp;&nbsp;&nbsp;时间：2016/3/21<pre>
+</div>
+<blockquote>Web 开发中经常会遇到性能的问题，而这些问题很大一部分都是由程序员写的 JavaScript 脚本性能不佳所造成的，里面包括了 JavaScript 语言本身的性能问题，以及其与 DOM 交互时的性能问题。本文主要来探讨一下如何尽可能多的避免这类问题，从而最大限度的提高 Web 应用的性能。
+</blockquote>
+
+<div class="articleSubHead">字符串拼接</div>
+<article>
+<b>经常看到这样的代码：</b>
+
+<code>str += “str1” + “str2”</code>
+这是我们拼接字符串常用的方式，但是这种方式会有一些临时变量的创建和销毁，影响性能，所以推荐使用如下方式拼接：
+字符串数组方式拼接
+ <code>var str_array = []; 
+ str_array.push(“str1”); 
+ str_array.push(“str2”); 
+ str = str_array.join(“”);</code>
+这里我们利用数组（array）的“join”方法实现字符串的拼接，尤其是程序的老版本的 Internet Explore（IE6）上运行时，会有非常明显的性能上的改进。
+当然，最新的浏览器（如火狐 Firefox3+，IE8+ 等等）对字符串的拼接做了优化，我们也可以这样写：
+字符串快速拼接
+ <code>str +=“str1”
+ str +=“str2”</code>
+新的浏览器对“+=”做了优化，性能略快于数组的“join”方法。在不久的将来更新版本浏览器可能对“+”也会做优化，所以那时我们可以直接写：str += “str1” + “str2”。
+</article>
+<div class="articleSubHead">隐式类型转换</div>
+<article>
+ <code>var str = “12345678”, arr = []; 
+ for(var i = 0; i <= s.length; i++){ 
+ arr.push( str.charAt(i)); 
+ }</code>
+这里我们在每个循环时都会调用字符串的“charAt”方法，但是由于我们是将常量“12345678”赋值给“str”，所以“str”这里事实上并不是一个字符串对象，当它每次调用“charAt”函数时，都会临时构造值为“12345678”的字符串对象，然后调用“charAt”方法，最后再释放这个字符串临时对象。我们可以做一些改进，避免隐式类型转换
+ <code>var str = new Stirng(“12345678”), arr = []; 
+ for(var i = 0; i <= s.length; i++){ 
+ arr.push( str.charAt(i)); 
+ }</code>
+这样一来，变量“str”作为一个字符串对象，就不会有这种隐式类型转换的过程了，这样一来，效率会显著提高。
+</article>
+<div class="articleSubHead">字符串匹配</div>
+<article>
+JavaScript 有 RegExp 对象，支持对字符串的正则表达式匹配。是一个很好的工具，但是它的性能并不是非常理想。相反，字符串对象（String）本身的一些基本方法的效率是非常高的，比如“substring”，“indexOf”，“charAt”等等，在我们需要用正则表达式匹配字符串时，可以考虑一下：
+是否能够通过字符串对象本身支持的基本方法解决问题。
+是否可以通过“substring”来缩小需要用正则表达式的范围。
+这些方式都能够有效的提高程序的效率。
+关于正则表达式对象，还有一点需要注意，参考如下代码：
+ <code>for(var i = 0; i <= str_array.length; i++){ 
+ if(str_array[i].match(/^s*extra\s/)){ 
+……………………
+ } 
+ }</code>
+这里，我们往“match”方法传入“/^s*extra\s/”是会影响效率的，它会构建临时值为“/^s*extra\s/”的正则表达式对象，执行“match”方法，然后销毁临时的正则表达式对象。我们可以这样做：
+ 利用变量
+ <code>var sExpr = /^s*extra\s/;
+ for(var i = 0; i <= str_array.length; i++){ 
+ if(str_array[i].match(sExpr)){ 
+……………………
+ } 
+ }</code>
+这样就不会有临时对象了。
+</article>
+</article>
+</div>
+
+</div>
+</div>
+<script type="text/javascript" src="jqueryt.js"></script>
+<script type="text/javascript" src="文章索引.js"></script>
+</body>
+</html>
