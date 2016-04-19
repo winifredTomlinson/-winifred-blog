@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学习笔记</title>
+<link href="../前端之路——无止境的学习之路.css" rel="stylesheet" type="text/css" >
+<style>
+.main{height:5400px;}
+</style>
+</head>
+
+<body>
+<nav class="humberger">
+<div class="menu-trigger" id="menu-trigger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
+<div class="slide_menu">
+<ul>
+<li><a href="Html文章索引.html">HTML</a></li>
+<div class="line-black"></div>
+<li><a href="Css文章索引.html">CSS</a></li>
+<div class="line-black"></div>
+<li><a href="JS文章索引.html">JAVASCRIPT</a></li>
+<div class="line-black"></div>
+<li><a href="JQuery文章索引.html">JQUERY</a></li>
+<div class="line-black"></div>
+</ul>
+</div><div class="top">
+
+<div class="ball" id="ball">
+
+</div>
+				Winifred's Blog
+</div>
+<div class="ion-navigate" id="ion-navigate"></div>
+<div class="section">
+<div class="main">
+<div class="navTop"><ul>
+    <li style="margin-left:2px;"><a href="index.html" target="_blank">首 页</a></li><li><a href="学习笔记.html" target="_self">学习笔记</a></li><li><a href="前端之路——无止境的学习之路.html" target="_self">前端之路</a></li></ul>
+</div>
+<div style="background-color:#ccc;height:1px;width:90%;left:5%;float:left;position:relative;"></div>
+<div class="articleHead">
+<pre>学习笔记<pre>
+<pre class="subhead">分类：Html&nbsp;Css&nbsp;Javascript&nbsp;&nbsp;时间：2016/3/23<pre>
+</div>
+<blockquote>AlphaGo取得的卓越成就让人想起了科幻电影里机器人统治人类的骇人桥段，直到有人说：“如果思想被禁锢，还怕统治你的是机器人么”时才突然发觉思想的进步是真正超越其他人或物的根本所在，一针见血。
+</blockquote>
+<div class="articleInnerImag">
+<img src="images/学习笔记.png">
+</div>
+<div class="articleSubHead">
+函数的四种调用方式</div>
+<article>
+	在使用apply和call时，要注意其共性与区别，共性为都有两个参数，第一个参数为希望绑定的this对象，主要区别为apply参数作为数组传入["",""]，而call的参数是与所调用函数的参数一一对应的。而bind和apply，call一样都可以绑定对象，但是bind是返回的仍然是一个函数，需要用()再进行调用，而后者直接是对函数的调用，故不需要()。g=f.bind(f一定是函数名[函数])！！！</article>
+<div class="articleSubHead">
+闭包</div>
+<article>
+	所谓闭包是在外部函数内部定义内部函数，内部函数调用外部函数的参数，并且在外部函数外将调用内部函数。在理解闭包时要注意理解，执行环境，作用域链以及变量常驻内存，不会被垃圾回收机制回收等情况
+简单的示例代码：
+
+<code>
+function a(){
+nun = 1;
+var saynum = function（）｛
+
+alert（“数值为：” + num）;
+
+｝
+num++;
+return saynum;
+｝
+a()；
+</code>
+</article>
+<div class="articleSubHead">
+javascript遍历dom文档模型</div>
+<article>
+	getElementsByClassName使用给定类名检索元素，IE6、IE7不支持，需要使用getElementsByTagName获得定位点列表，然后循环该列表，然后可以加上类名判断</article>
+<div class="articleSubHead">
+Html盒子布局布局</div>
+<article>
+	标准模式，浏览器按照规范呈现页面，混杂模式按照宽松的标准显示页面。混杂模式实际宽度为width，实际高度为height
+	块元素一般从新行开始，他能容纳内联元素和其他块元素，form这个块元素比较特殊，他只能容纳其他块元素。一般只有块元素才说盒子模型。
+	内联元素只能容纳文本和其他内联元素。其高度一般由元素内部字体大小决定，宽度由内容的长度控制。内联元素不能指定其高度和宽度。
+	position的默认属性是static，意思是元素没有被定位，且在文档中出现在他应该在的位置。
+当position为relative和absolute的时候，元素可以设置top，left等值，前者使用这些属性值来相对于元素在文档中应该出现的位置移动元素，意思是元素实际上依然占据文档中的原有位置，只是视觉上相对于他在文档中的原有位置移动了。后者元素脱离文档，即在文档中已不占据位置。
+	若给div1设置为relative则div1里的所有元素都会相对于div1定位。
+</article>
+<div class="articleSubHead">
+正则表达式的匹配</div>
+<article>
+	正则表达式中的所有字母和数字都按照字面含义进行匹配
+
+<b>字符类</b>
+
+	即将直接量字符单独放进方括号内，而因为有些字符类非常常用，所以用了一些一些特殊字符的转义字符来表示他们，如\w，\W，\s，\S，\d，\D
+    
+<b>重复</b>
+
+	为了实现重复字符的匹配而引入特殊的字符，如+，?
+    
+</article>
+
+<div class="articleSubHead">
+数组</div>
+<article>
+	因为数组索引仅仅是对象属性名的一种特殊类型，所以javascript数组的不存在越界的说法，当索引查询任何对象中不存在的属性时，不会抱错，只会显示undefined，类似于对象，对于对象同样存在这种情况。
+	创建数组通常有三种方式，对于最常见的字面量和构造函数Array( )来说，[, , ,]与Array(3)是不一样的，前者的值是三个undefined，在索引0处有元素，而后者却是没有元素的。
+    
+<code>var a=new Arrary(4);
+a.join('-')   //'---':3个连字号组成的字符串</code>
+	concat不会修改调用的数组
+	slice 两个参数，返回的数组包含第一个参数位置的元素，一直到第二个参数位置的元素，但不包含第二个参数位置元素，包含第一个参数位置元素，索引为负则用这个负数加上数组长度这个函数不会修改调用的数组。
+	splice 会修改调用的数组，与concat不同，splice会插入数组本身，而非数组元素。
+	push，pop方法都修改并替换原始数组，push([4,5])---->[原数组，[4,5]]
+	unshift，是在头部插入，但当有多个参数时不是一个一个的插入，而是像splice一样，把所有参数按照原来的顺序，一次性插入
+	map返回新数组
+</article>
+<div class="articleSubHead">
+zoom和scale</div>
+<article>
+	zoom和scale都是控制元素进行缩放，但是前者是先缩放后计算布局，如布局中有垂直居中，css中还有zoom:0.5则他会先缩小后布局，实现居中效果，而scale是先布局，后进行缩放，其默认是以自己的基点为中心进行缩放，若设置transfor—origin为top left则将缩放的基点设置到左上角。
+</article>
+<div class="articleSubHead">
+Css的各种居中</div>
+<article>
+	设置了position: absolute; 的元素会变成块元素，并脱离普通文档流。而文档的其余部分照常渲染，元素像是不在原来的位置一样。
+    
+<code>width: 50%;
+height: 50%;
+overflow: auto;
+margin: auto;
+position: absolute;
+top: 0; left: 0; bottom: 0; right: 0;</code>
+<b>水平居中</b>
+	text-align:center 和 margin:0 auto，前者针对父元素，后者针对子元素，他们
+起作用的首要条件是子元素必须没有被float影响。
+
+<b>完全居中</b>
+	父元素有height和width值：在父元素上写position：relative，子元素写position：
+absolute;top:50%;left:50%;margin-top:-(height/2),margin-left:-(width/2)
+即可能出现如下代码
+
+<code>width：100px;height:80px;position:absolute;top:50%;left:50%;
+margin-top:-40px;margin-left:-50px;</code>
+
+<b>文字的垂直居中</b>
+	height是指div的高度，line—hieght是指文字的行高，即一行的像素数目。前者文字还是会默认从顶端开始排列，后者则会相对这些像素数目居中对齐。所以让height等于line—height就可以实现文字垂直居中。
+</article>
+<div class="articleSubHead">
+js基本数据类型</div>
+<article>
+	js基本数据类型：number，string，undefined，object，boolean。其中，null是特殊的object，NAN是特殊的number 
+“==”对操作值隐式转换后进行比较，null==undefined
+</article>
+<div class="articleSubHead">
+关于D3的基础知识</div>
+<article>
+<code>svg.selectAll("rect")   //选择svg内所有的矩形
+    .data(dataset)  //绑定数组
+    .enter()        //指定选择集的enter部分
+    .append("rect") //添加足够数量的矩形元素</code>
+
+	这段代码以后会常常出现在 D3 的代码中。当：有数据，而没有足够图形元素的时候，使用此方法可以添加足够的元素。
+	enter()数的作用是返回一个新的D3()对象集合，这个集合包含了所有没有被可视化啊的数据。
+
+<b>比例尺：</b>
+	D3 中的比例尺，也有定义域和值域，分别被称为 domain 和 range。开发者需要指定 domain 和 range 的范围，如此即可得到一个计算关系。
+    
+<b>线性比例尺（线性）</b>
+
+<code>var dataset = [1.2, 2.3, 0.9, 1.5, 3.3];
+现有要求如下：
+将 dataset 中最小的值，映射成 0；将最大的值，映射成 300
+
+var min = d3.min(dataset);
+var max = d3.max(dataset);
+ 
+var linear = d3.scale.linear()
+        .domain([min, max])
+        .range([0, 300]);
+ 
+linear(0.9);    //返回 0
+linear(2.3);    //返回 175
+linear(3.3);    //返回 300
+d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(0.9)</code>
+
+
+<b>数比例尺（离散）</b>
+
+<code>
+var index = [0, 1, 2, 3, 4];
+var color = ["red", "blue", "green", "yellow", "black"];</code>
+
+我们希望 0 对应颜色 red，1 对应 blue，依次类推。
+但是，这些值都是离散的，线性比例尺不适合，需要用到序数比例尺。
+
+<code>var ordinal = d3.scale.ordinal()
+        .domain(index)
+        .range(color);
+ 
+ordinal(0); //返回 red
+ordinal(2); //返回 green
+ordinal(4); //返回 black</code>
+</article>
+
+
+</div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="文章索引.js"></script>
+</body>
+</html>
